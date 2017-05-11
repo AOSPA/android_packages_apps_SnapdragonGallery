@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a4085de_aa9721ab",
+        "filename": "src/com/android/gallery3d/filtershow/pipeline/ImagePreset.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2017-05-11T22:01:23Z",
+      "side": 1,
+      "message": "This check is useless, this code won\u0027t ever be reached with this null",
+      "range": {
+        "startLine": 794,
+        "startChar": 24,
+        "endLine": 794,
+        "endChar": 29
+      },
+      "revId": "667503f80649fa1719d1669b40bc8ae5cf65de81",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad",
+      "unresolved": false
+    }
+  ]
+}
