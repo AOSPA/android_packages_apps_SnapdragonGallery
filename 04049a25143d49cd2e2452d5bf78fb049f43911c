@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a48ee3c6_dd25ae35",
+        "filename": "src/com/android/gallery3d/glrenderer/UploadedTexture.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2017-05-11T03:59:55Z",
+      "side": 1,
+      "message": "need a space between closed parenthesis and return.",
+      "revId": "04049a25143d49cd2e2452d5bf78fb049f43911c",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad",
+      "unresolved": false
+    }
+  ]
+}
