@@ -39,12 +39,7 @@ public class FaceDetect {
      * initialize method,MUST called at first time.
      */
     public void initialize() {
-        try {
-            mHandle = native_create();
-        } catch (UnsatisfiedLinkError e) {
-            e.printStackTrace();
-            Log.e(TAG, "could not link native handle for ts_detected_face_jni library!");
-        }
+        mHandle = native_create();
     }
 
     /**
@@ -52,9 +47,7 @@ public class FaceDetect {
      */
 
     public void uninitialize() {
-        if (mHandle != 0) {
-            native_destroy(mHandle);
-        }
+        native_destroy(mHandle);
     }
 
     /**
@@ -65,11 +58,6 @@ public class FaceDetect {
      * @return FaceInfo array if success, otherwise return null.
      */
     public FaceInfo[] dectectFeatures(Bitmap bmp) {
-        // check if the initialization failed
-        if (mHandle == 0) {
-            return null;
-        }
-
         int count = native_detect(mHandle, bmp);
         if (count < 1) {
             return null;
