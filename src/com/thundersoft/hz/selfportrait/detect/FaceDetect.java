@@ -86,17 +86,23 @@ public class FaceDetect {
             return null;
         }
 
-        int count = native_detect(mHandle, bmp);
-        if (count < 1) {
+        try {
+            int count = native_detect(mHandle, bmp);
+            if (count < 1) {
+                return null;
+            }
+            FaceInfo[] res = new FaceInfo[count];
+            for (int i = 0; i < count; i++) {
+                FaceInfo face = new FaceInfo();
+                native_face_info(mHandle, i, face.face, face.eye1, face.eye2, face.mouth);
+                res[i] = face;
+            }
+            return res;
+        } catch (UnsatisfiedLinkError e) {
+            e.printStackTrace();
+            Log.e(TAG, "could not link native handle for ts_detected_face_jni library!");
             return null;
         }
-        FaceInfo[] res = new FaceInfo[count];
-        for (int i = 0; i < count; i++) {
-            FaceInfo face = new FaceInfo();
-            native_face_info(mHandle, i, face.face, face.eye1, face.eye2, face.mouth);
-            res[i] = face;
-        }
-        return res;
     }
 
     private static native long native_create();
